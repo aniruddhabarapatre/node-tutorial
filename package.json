@@ -1,0 +1,10 @@
+{
+  "name": "node-tutorial",
+  "description": "NodeJS and Express Tutorial",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.12.3",
+    "ejs": "^2.3.1",
+    "express": "3.x"
+  }
+}

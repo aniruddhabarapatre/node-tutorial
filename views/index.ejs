@@ -1,0 +1,16 @@
+<html>
+<link href="/bootstrap.css" rel="stylesheet">
+<head>
+    <title>My Blog!</title>
+</head>
+
+<body>
+  <h1><%- title %></h1>
+  <% for(var i=0; i < entries.length; i++) {%>
+    <p>
+      <a href="/article/<%- entries[i].id %>"><%- entries[i].title %></a><br/>
+      Published: <%- entries[i].published %>
+    </p>
+  <% } %>
+</body>
+</html>
