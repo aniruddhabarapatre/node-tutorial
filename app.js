@@ -9,6 +9,16 @@ app.use(bodyParser.json());
 
 var blogEngine = require('./blog');
 
+// A basic view counter
+var counter = {
+  '1': 0,
+  '2': 0,
+  '3': 0,
+  '4': 0,
+  '5': 0,
+  '6': 0,
+}
+
 // Page routes
 app.get('/', function(req, res) {
   res.render('index',{ title: 'Home Page', entries: blogEngine.getBlogEntries() });
@@ -16,7 +26,8 @@ app.get('/', function(req, res) {
 
 app.get('/article/:id', function(req, res) {
   var entry = blogEngine.getBlogEntry(req.params.id);
-  res.render('article',{ title: entry.title, blog: entry });
+  counter[req.params.id]++;
+  res.render('article',{ title: entry.title, blog: entry, count: counter[req.params.id] });
 });
 
 console.log('Listening at port 3000');

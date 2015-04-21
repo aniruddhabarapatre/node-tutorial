@@ -1,6 +1,18 @@
 </html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 <link rel="stylesheet" href="/bootstrap.css" >
 <h1><%- blog.title %></h1>
 Published: <%- blog.published %>
 <p><%-blog.body %></p>
+
+<button id="like" class="btn btn-primary">Like</button>
+<h4 id="begging">Please like my page!</h4>
+<h3><%- count %> views and counting!</h5>
+<script>
+  $("#like").click(function() {
+    alert('I\'ll never forget you.');
+    $("#begging").text("Thanks!");
+  });
+</script>
 </html>
