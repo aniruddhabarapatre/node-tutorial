@@ -27,7 +27,8 @@ app.get('/', function(req, res) {
 app.get('/article/:id', function(req, res) {
   var entry = blogEngine.getBlogEntry(req.params.id);
   counter[req.params.id]++;
-  res.render('article',{ title: entry.title, blog: entry, count: counter[req.params.id] });
+  res.render('article',{ title: entry.title, blog: entry,
+    count: counter[req.params.id],  entries: blogEngine.getBlogEntries() });
 });
 
 console.log('Listening at port 3000');

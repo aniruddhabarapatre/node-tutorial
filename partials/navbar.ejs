@@ -1,0 +1,12 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Home</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <% for(var i=0; i < entries.length; i++) { %>
+          <li><a href="article/<%- entries[i].id %>"><%- entries[i].title %></a></li>
+      <% } %>
+    </ul>
+  </div>
+</nav>

@@ -1,18 +1,27 @@
-</html>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-<link rel="stylesheet" href="/bootstrap.css" >
-<h1><%- blog.title %></h1>
-Published: <%- blog.published %>
-<p><%-blog.body %></p>
+    <link rel="stylesheet" href="/bootstrap.css" >
+  </head>
+  <body>
 
-<button id="like" class="btn btn-primary">Like</button>
-<h4 id="begging">Please like my page!</h4>
-<h3><%- count %> views and counting!</h5>
-<script>
-  $("#like").click(function() {
-    alert('I\'ll never forget you.');
-    $("#begging").text("Thanks!");
-  });
-</script>
+    <%- include ../partials/navbar.ejs %>
+    <div class="container">
+      <div class="row col-sm-4">
+      <h1 class="blog-post-title"><%- blog.title %></h1>
+      <p class="blog-post-meta"><%- blog.published %></p>
+      <p><%-blog.body %></p>
+
+      <button id="like" style="float: left;" class="btn btn-primary">Like</button>
+      <h4 style="float: right;"><%- count %> views and counting!</h5>
+      <script>
+        $("#like").click(function() {
+          alert('I\'ll never forget you.');
+          $("#begging").text("Thanks!");
+        });
+      </script>
+      </div>
+    </div>
+  </body>
 </html>
